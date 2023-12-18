@@ -21,6 +21,8 @@ def dzielenie(a, b):
     return a / b
 
 def main():
+    operations = {1, 2, 3, 4}
+    
     logging.basicConfig(level=logging.INFO)
 
     print("Podaj działanie, posługując się odpowiednią liczbą:")
@@ -28,12 +30,13 @@ def main():
 
     operation = int(input())
 
-    if operation not in [1, 2, 3, 4]:
+    if operation not in operations:
         print("Nieprawidłowa operacja.")
         return
 
     args = []
-    if operation in [1, 3]:
+
+    if operation in {1, 3}:
         print("Podaj składniki oddzielone spacją:")
         args = list(map(float, input().split()))
     else:
@@ -70,3 +73,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+3
